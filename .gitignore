@@ -5,3 +5,6 @@ instance
 *.egg-info
 
 .coverage
+
+build
+dist

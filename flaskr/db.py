@@ -13,7 +13,7 @@ def get_db():
     
     return g.db
 
-def clost_db(e=None):
+def close_db(e=None):
     db = g.pop('db', None)
 
     if db is not None:
@@ -32,5 +32,5 @@ def init_db_command():
     click.echo('Initialized the database.')
 
 def init_app(app):
-    app.teardown_appcontext(clost_db)
+    app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
